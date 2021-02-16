@@ -1,0 +1,12 @@
+.app-preloader {
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: $white;
+	z-index: $zindex-preloader;
+	top: 0;
+	left: 0;
+	transition: $transition-base;
+}

@@ -1,0 +1,69 @@
+// Join us section
+section.section.section--bg-primary#join-us-section
+	.section__bg--image-container.section__fade.section__fade--primary-08
+		img.section__bg--image(src="./images/backgrounds/join-us-section-image.jpg", alt="", role="presentation")
+	.container
+		.row
+			.col-12
+				.row.align-items-center
+					.col-12.offset-0.col-sm-10.offset-sm-1.col-md-8.offset-md-2.col-lg-6.offset-lg-0.mb-md-0.mb-4
+						.section__content-wrapper.text-white.px-0.py-7
+							.row
+								.col-12
+									h2.h1.text-white.font-weight-bolder.text-uppercase join us
+								.col-12.mt-2
+									.section__content
+										p.lead.font-weight-normal.mb-0 We always look for the best talents
+					.col-12.offset-0.col-sm-8.offset-sm-2.col-md-4.offset-md-4.col-lg-2.offset-lg-3.d-flex.justify-content-center
+						button.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(type="button", data-toggle="modal", data-target="#joinUsModal")
+							| join us
+							span.btn-icon
+								svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' viewBox='0 0 16 16')
+									path(fill-rule='evenodd' d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z')
+									path(fill-rule='evenodd' d='M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z')
+// Modal
+#joinUsModal.modal.fade(tabindex='-1', aria-labelledby='joinUsModalLabel', aria-hidden='true')
+	.modal-dialog.modal-dialog-centered.modal-lg
+		.modal-content
+			.modal-header
+				.row
+					.col-12
+						h3#joinUsModalLabel.h1.text-uppercase.modal-title.text-white join us
+					.col-12
+						p.lead.font-weight-normal.m-0.text-white We always look for the best talents
+				button.close.p-4(type='button' data-dismiss='modal' aria-label='Close')
+					svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' viewBox='0 0 16 16')
+						path(d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z')
+			.modal-body.pt-0
+				form(action="#", method="POST")
+					.form-row
+						.col-12.col-md-6
+							.form-row
+								.col-12
+									.form-group
+										input.form-control.form-control-lg#joinUsFormName(type="text", placeholder="Name", autocomplete="name")
+								.col-12
+									.form-group
+										input.form-control.form-control-lg#joinUsFormEmail(type="email", placeholder="Email", autocomplete="email")
+								.col-12
+									.form-group
+										input.form-control.form-control-lg#joinUsFormPosition(type="text", placeholder="Position")
+						.col-12.col-md-6
+							.form-row
+								.col-12
+									.form-group
+										input.form-control.form-control-lg#joinUsFormPhone(type="tel", placeholder="Phone", autocomplete="tel")
+								.col-12
+									.form-group
+										textarea.form-control.form-control-lg#joinUsNotes(rows="3", placeholder="Notes")
+					.form-row.mt-4
+						.col-6.col-md-5
+							button.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(type="submit")
+								| Submit application
+								span.btn-icon
+									svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z')
+										path(fill-rule='evenodd' d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z')
+
+
+// Join us section end/.

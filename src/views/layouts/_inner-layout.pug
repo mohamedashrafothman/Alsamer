@@ -1,0 +1,17 @@
+include ../mixins/_app-header.pug
+
+block variables
+	- var menu = {type:"inner", is_menu_open: false, nav_list: [{ title: "about", href: "about-us.html" }]};
+
+doctype html
+html(lang=`${locals.lang}` dir=`${(locals.lang === "en") ? "ltr" : "rtl"}`)
+	include ../base/_head.pug
+	body(class=`${menu.is_menu_open ? "side-menu--is-open" : ""}`)
+		// Application
+		#app
+			include ../sections/app-preloader.pug
+			+app-header(menu)
+			block content
+			include ../sections/app-footer.pug
+			include ../base/_foot.pug
+		// Application End/.

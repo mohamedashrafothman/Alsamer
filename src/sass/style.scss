@@ -1,0 +1,56 @@
+/*
+** LIBRARIES
+** ==============================================
+*/
+@import "libs/bootstrap/bootstrap";
+@import "libs/fontawesome/fontawesome";
+@import "libs/swiper/swiper";
+@import "libs/animate-css/animate";
+@import "libs/mdi/materialdesignicons.scss";
+
+/*
+** COMPONENTS
+** ==============================================
+*/
+@import "components/logo";
+@import "components/service-card";
+@import "components/client";
+@import "components/project";
+@import "components/team-member";
+
+/*
+** HELPERS
+** ==============================================
+*/
+@import "helpers/debug";
+@import "helpers/mixins";
+@import "helpers/helper-classes";
+
+/*
+** SECTIONS
+** ==============================================
+*/
+@import "sections/app-preloader";
+@import "sections/app-header";
+@import "sections/section";
+@import "sections/app-main";
+@import "sections/hero";
+@import "sections/about-us-section";
+@import "sections/services-section";
+@import "sections/clients-section";
+@import "sections/projects-section";
+@import "sections/why-choose-us-section";
+@import "sections/our-team-section";
+
+/*
+** PAGES
+** ==============================================
+*/
+@import "pages/index.scss";
+@import "pages/about.scss";
+
+/*
+** OVERWRITING STYLE
+** ==============================================
+*/
+@import "custom-style";

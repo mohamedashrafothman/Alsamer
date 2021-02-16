@@ -1,0 +1,49 @@
+.service-card {
+	transition: $transition-base;
+	background-color: transparent;
+	margin-bottom: 2rem;
+	border: 0;
+	border-radius: 0;
+
+	&--with-shadow {
+		@if $enable-shadows {
+			filter: drop-shadow(#{$box-shadow});
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			@if $enable-shadows {
+				filter: drop-shadow(#{$box-shadow-lg});
+			}
+		}
+	}
+
+	.card-body {
+		background-color: $card-bg;
+		padding-bottom: calc(#{$card-spacer-x} + 2rem);
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{2rem}), 0 100%);
+		transition: $transition-base;
+	}
+
+	.card-content {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		transition: $transition-base;
+	}
+
+	.card-img-top {
+		height: 230px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	&:hover {
+		.card-content {
+			visibility: visible;
+			opacity: 1;
+			height: auto;
+		}
+	}
+}

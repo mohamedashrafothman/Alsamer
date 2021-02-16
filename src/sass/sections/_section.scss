@@ -1,0 +1,334 @@
+.section {
+	position: relative;
+
+	&--zigzag {
+		&:not(:first-of-type):not(:last-of-type) {
+			padding-bottom: 1.5625rem;
+			padding-top: 1.5625rem;
+		}
+
+		&:first-of-type {
+			padding-bottom: 3.125rem;
+		}
+		&:last-of-type {
+			padding-top: 3.125rem;
+		}
+		@include media-breakpoint-up(md) {
+			&:nth-of-type(even) {
+				.section__content-wrapper {
+					padding-left: 0;
+				}
+			}
+
+			&:nth-of-type(odd) {
+				.section__content-wrapper {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	&__fade {
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($white, 0.8);
+		}
+	}
+
+	&__bg {
+		&--svg-container,
+		&--image-container,
+		&--slider-container,
+		&--map-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			& + * {
+				z-index: 10;
+			}
+		}
+
+		&--map-container {
+			& + * {
+				@include media-breakpoint-down(md) {
+					padding-bottom: 25vh !important;
+				}
+				@include media-breakpoint-down(sm) {
+					padding-bottom: 50vh !important;
+				}
+			}
+		}
+
+		&--svg,
+		&--image,
+		&--slider,
+		&--map {
+			height: 100%;
+			width: 100%;
+			opacity: 1;
+			object-fit: cover;
+			object-position: center;
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+			iframe {
+				width: 100%;
+				height: 100%;
+				border: 0;
+				pointer-events: none;
+				&.clicked {
+					pointer-events: auto;
+				}
+			}
+		}
+	}
+
+	&__float-image-container,
+	&__float-slider-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25rem;
+		max-height: 100%;
+		z-index: 25;
+		margin: 0;
+
+		@each $breakpoint, $container-max-width in $container-max-widths {
+			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+				width: calc(50% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+			}
+		}
+
+		&--top-left {
+			top: 0;
+			left: 0;
+			right: initial;
+			bottom: initial;
+			.section__float-image {
+				object-position: top left;
+			}
+		}
+		&--center-left {
+			top: 50%;
+			left: 0;
+			right: initial;
+			bottom: initial;
+			transform: translateY(-50%);
+			.section__float-image {
+				object-position: center left;
+			}
+		}
+		&--bottom-left {
+			top: initial;
+			left: 0;
+			right: initial;
+			bottom: 0;
+			.section__float-image {
+				object-position: bottom left;
+			}
+		}
+
+		&--top-center {
+			top: 0;
+			left: 50%;
+			right: initial;
+			bottom: initial;
+			transform: translateX(-50%);
+			.section__float-image {
+				object-position: top center;
+			}
+		}
+		&--center-center {
+			top: 50%;
+			left: 50%;
+			right: initial;
+			bottom: initial;
+			transform: translate(-50%);
+			.section__float-image {
+				object-position: center center;
+			}
+		}
+		&--bottom-center {
+			top: initial;
+			left: 50%;
+			right: initial;
+			bottom: 0;
+			transform: translateX(-50%);
+			.section__float-image {
+				object-position: bottom center;
+			}
+		}
+
+		&--top-right {
+			top: 0;
+			left: initial;
+			right: 0;
+			bottom: initial;
+			.section__float-image {
+				object-position: top right;
+			}
+		}
+		&--center-right {
+			top: 50%;
+			left: initial;
+			right: 0;
+			bottom: initial;
+			transform: translateY(-50%);
+			.section__float-image {
+				object-position: center right;
+			}
+		}
+		&--bottom-right {
+			top: initial;
+			left: initial;
+			right: 0;
+			bottom: 0;
+			.section__float-image {
+				object-position: bottom right;
+			}
+		}
+	}
+	&__float-image {
+		&,
+		img,
+		svg {
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content-wrapper {
+		min-width: 1px;
+		max-width: 100%;
+		min-height: 1px;
+		word-wrap: break-word;
+		background-clip: border-box;
+		border-radius: 0;
+		transition: $transition-base;
+		background: inherit;
+		margin-right: auto;
+		margin-left: auto;
+		z-index: 0;
+		padding: map-get($spacers, 5) map-get($spacers, 5);
+
+		@include media-breakpoint-down(md) {
+			padding: #{map-get($spacers, 5) / 2} #{map-get($spacers, 5) / 2};
+		}
+		@include media-breakpoint-down(sm) {
+			padding: #{map-get($spacers, 5) / 3} #{map-get($spacers, 5) / 3};
+		}
+	}
+
+	&__content {
+		ol {
+			margin-left: 1rem;
+		}
+		ul {
+			@include list-unstyled();
+			li {
+				margin-left: 1em;
+				&::before {
+					content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+					color: $primary;
+					font-size: 1em;
+					font-weight: bold;
+					display: inline-block; /* Needed to add space between the bullet and the text */
+					width: 1em; /* Also needed for space (tweak if needed) */
+					margin-left: -1em; /* Also needed for space (tweak if needed) */
+				}
+			}
+		}
+	}
+
+	&__subtitle {
+		font-weight: $font-weight-base;
+		text-transform: capitalize;
+		color: $body-color;
+	}
+
+	&__text {
+		color: $body-color;
+		font-weight: $font-weight-light;
+		&::first-letter {
+			text-transform: capitalize;
+		}
+	}
+
+	&__image-container {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: auto;
+		max-height: 100%;
+
+		@include media-breakpoint-down(md) {
+			max-height: calc(100vw * 0.5);
+		}
+		@include media-breakpoint-down(sm) {
+			max-height: calc(100vw * 0.75);
+		}
+	}
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+@each $color, $color-value in $theme-colors {
+	.section--bg-#{$color} {
+		z-index: 0;
+		background-color: $color-value;
+		@if $color == "transparent" {
+			color: $body-color;
+		} @else {
+			color: color-yiq($color-value, $body-color);
+		}
+	}
+	.section__fade--#{$color} {
+		background-color: $color-value;
+
+		&::after {
+			background: rgba($color-value, 0.5);
+		}
+
+		@each $opacity, $opacity-value in $fade-opacity {
+			&-#{$opacity} {
+				background-color: $color-value;
+
+				&::after {
+					background: rgba($color-value, $opacity-value);
+				}
+			}
+		}
+	}
+	.section__title--#{$color} {
+		color: $color-value;
+	}
+	.section__subtitle--#{$color} {
+		color: $color-value;
+	}
+	.section__text--#{$color} {
+		color: $color-value;
+	}
+}

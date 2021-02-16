@@ -1,0 +1,70 @@
+#why-choose-us-section {
+	padding-top: map-get($spacers, 8);
+	padding-bottom: map-get($spacers, 7);
+
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-end;
+
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: calc(#{map-get($spacers, 5)});
+	}
+
+	.section__float-slider-container {
+		width: 100%;
+		position: relative;
+		@each $breakpoint, $container-max-width in $container-max-widths {
+			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+				position: absolute;
+				@if $breakpoint == md {
+					width: calc(55% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else {
+					width: calc(55% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				}
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			top: initial;
+			left: initial;
+			right: 0;
+			bottom: 0;
+			margin-top: -2rem;
+			width: 90%;
+			position: relative;
+		}
+	}
+
+	.slider {
+		&-button {
+			&-next,
+			&-prev {
+				.mdi {
+					color: $white;
+					@include media-breakpoint-down(sm) {
+						color: $red;
+					}
+				}
+			}
+		}
+	}
+	.swiper {
+		&-container,
+		&-wrapper {
+			height: 100%;
+		}
+		&-controllers {
+			width: fit-content;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			@include media-breakpoint-down(md) {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

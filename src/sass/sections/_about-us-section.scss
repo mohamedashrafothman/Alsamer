@@ -1,0 +1,14 @@
+#about-us-section {
+	padding-top: map-get($spacers, 10);
+	padding-bottom: map-get($spacers, 5);
+	@include media-breakpoint-down(sm) {
+		padding-top: calc(#{map-get($spacers, 5)} + 25rem);
+	}
+
+	.section__float-image-container {
+		@include media-breakpoint-down(sm) {
+			top: map-get($spacers, 5);
+			transform: initial !important;
+		}
+	}
+}

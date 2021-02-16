@@ -1,0 +1,63 @@
+#clients-section {
+	padding-top: calc(#{map-get($spacers, 3)});
+	padding-bottom: map-get($spacers, 6);
+	display: flex;
+	flex-direction: column-reverse;
+
+	@include media-breakpoint-up(md) {
+		padding-top: map-get($spacers, 7);
+		padding-bottom: map-get($spacers, 7);
+	}
+	@include media-breakpoint-up(sm) {
+		padding-bottom: map-get($spacers, 7);
+		display: block;
+	}
+
+	.section__float-slider-container {
+		width: 100%;
+		position: relative;
+		@each $breakpoint, $container-max-width in $container-max-widths {
+			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+				position: absolute;
+				@if $breakpoint == md {
+					width: calc(60% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else {
+					width: calc(75% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				}
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			height: auto;
+		}
+		@include media-breakpoint-down(sm) {
+			top: initial;
+			left: initial;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.swiper {
+		&-slide {
+			height: calc((100% - (16px * 2)) / 3);
+			@include media-breakpoint-down(md) {
+				height: 100%;
+			}
+		}
+		&-controllers {
+			width: fit-content;
+			position: absolute;
+			left: 50%;
+			top: calc(100% + #{$grid-gutter-width});
+			transform: translateX(-50%);
+			@include media-breakpoint-up(sm) {
+				right: calc(100% + #{$grid-gutter-width});
+				bottom: #{$grid-gutter-width};
+				top: initial;
+				left: initial;
+				transform: initial;
+			}
+		}
+	}
+}

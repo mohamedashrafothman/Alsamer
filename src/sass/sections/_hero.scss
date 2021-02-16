@@ -1,0 +1,74 @@
+#hero-section {
+	min-height: 100vh;
+	height: 100vh;
+	display: flex;
+	align-items: flex-start;
+	position: relative;
+	@include media-breakpoint-down(md) {
+		height: 100% !important;
+	}
+	@each $breakpoint, $container-max-width in $container-max-widths {
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			padding-right: calc(calc((100% - #{map-get($container-max-widths, $breakpoint)}) / 2));
+			#hero-section__content-container {
+				padding-left: calc((100% - #{map-get($container-max-widths, $breakpoint)}));
+			}
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 250px;
+		background-color: $red;
+		display: block;
+		z-index: -1;
+		width: 80%;
+		@include media-breakpoint-down(lg) {
+			width: 75%;
+		}
+		@include media-breakpoint-down(md) {
+			width: 65%;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 58%;
+		}
+	}
+
+	@media screen and (max-height: 500px) {
+		min-height: 100%;
+	}
+
+	& > .container-fluid {
+		padding-right: 0;
+		padding-left: 0;
+		&,
+		& > .row,
+		& > .row > div[class*="col-"] {
+			height: 100%;
+		}
+	}
+	&__content-container {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-down(md) {
+			padding: 4rem 0;
+		}
+	}
+	&__image-container {
+		.section__image-container {
+			margin-left: 100px;
+			max-height: 100%;
+
+			@include media-breakpoint-down(md) {
+				max-height: calc(100vw) !important;
+			}
+			@include media-breakpoint-down(sm) {
+				max-height: calc(100vw) !important;
+			}
+		}
+	}
+}

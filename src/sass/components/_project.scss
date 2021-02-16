@@ -1,0 +1,36 @@
+.project {
+	margin-bottom: 0;
+	position: relative;
+	max-width: 100%;
+	overflow-x: hidden;
+	margin: 0 auto;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+
+	&__frame {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		background-color: $body-color;
+		@extend .shadow;
+	}
+	&__description {
+		margin-top: calc(-1 * ((#{$h6-font-size * $headings-line-height} / 2) + (1.125rem)));
+	}
+	&__title {
+		color: $white;
+		background-color: $red;
+		padding: 1.125rem;
+		text-transform: uppercase;
+		@extend .h6;
+		text-align: center;
+	}
+}

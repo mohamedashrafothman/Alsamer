@@ -1,0 +1,25 @@
+.logo {
+	transition: $transition-base;
+	cursor: pointer;
+
+	&,
+	&-container {
+		width: auto;
+		max-width: 100%;
+		display: inline-block;
+	}
+
+	&-container {
+		height: 5.625rem;
+		transition: $transition-base;
+	}
+
+	img,
+	svg {
+		width: auto;
+		max-width: 100%;
+		height: 100%;
+		object-fit: scale-down;
+		object-position: center;
+	}
+}

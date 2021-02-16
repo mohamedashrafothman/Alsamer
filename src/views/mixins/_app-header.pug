@@ -1,0 +1,99 @@
+mixin app-header(data={type: "index", is_menu_open: false, nav_list: []})
+	// application header section
+	// scrolling classes [".app-header--scrolling", ".app-header--scrolling-up", ".app-header--scrolling-down"]
+	// index & inner pages classes [".app-header--index", ".app-header--inner"]
+	header.app-header(class=`app-header--${data.type}`)
+		// application header content
+		.app-header__content
+			.container
+				.row.align-items-center
+					.col.col-5.col-sm-4.col-md-3
+						// header logo
+						.logo
+							a.logo-container(href="index.html", alt=locals.siteName["en"], aria-label=locals.siteName["en"])
+								img(src="./images/logo/logo-colored.svg", alt="AlSamer Home")
+						// header logo end/.
+					.col.col-sm-8.col-md-9
+						.row.align-items-center
+							.col-8.col-md-9.col-xl-3
+								// header side menu social links
+								ul.app-header__social.list-inline.mb-0.d-flex.align-items-center.justify-content-end.justify-content-lg-start
+									li.list-inline-item
+										a(href="http://www.facebook.com", alt="contact us via facebook", target="_blank", aria-label="contact us via facebook")
+											i.fab.fa-facebook-f
+									li.list-inline-item
+										a(href="http://www.twitter.com", alt="contact us via twitter", target="_blank", aria-label="contact us via twitter")
+											i.fab.fa-twitter
+									li.list-inline-item
+										a(href="http://www.linkedin.com", alt="contact us via linkedin", target="_blank", aria-label="contact us via linkedin")
+											i.fab.fa-linkedin-in
+									li.list-inline-item
+										a(href="http://www.instagram.com", alt="contact us via instagram", target="_blank", aria-label="contact us via instagram")
+											i.fab.fa-instagram
+								// header side menu social links end/.
+							.col-3.col-md.col-xl-9.d-none.d-lg-block
+								// header navigation list
+								nav.app-header__nav(aria-label="header main navigation")
+									ul.app-header__list.justify-content-end(role="menubar")
+										li.app-header__list-item
+											a.sr-only.sr-only-focusable(href="#app-main", role="menuitem") skip to content
+										each nav_list_item, i in data.nav_list
+											li.app-header__list-item(class=`${(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "active" : ""}`, role="menuitem")
+												a(href=nav_list_item.href, aria-current=(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "page" : undefined)=nav_list_item.title
+										li.app-header__list-item
+											a.rtl(href="#", role="menuitem") عربي
+								// header navigation list end/.
+							.col-3.offset-1.offset-md-0.d-flex.d-lg-none.justify-content-center
+								// header side menu open button
+								button.btn.btn-link.app-header__burger-menu.app-header__burger-menu--open(type="button", aria-label="Menu", aria-controls="side-menu", accesskey="m")
+									svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
+
+								// header side menu open button end/.
+		// application header content end/.
+
+		// header underlay
+		// Make sure if you want to make menu open by default to add here [".app-header__underlay--is-open"] class.
+		.app-header__underlay(class=`${data.is_menu_open ? "app-header__underlay--is-open" : ""}`)
+		// header underlay end/.
+
+		// header side menu
+		// Make sure if you want to make menu open by default to add here [".app-header__side-menu--is-open"] class, and aria-hidden attribute set to false.
+		.app-header__side-menu#side-menu(class=`${(data.is_menu_open) ? "app-header__side-menu--is-open" : ""}` aria-hidden=`${!data.is_menu_open}`)
+			// header side menu close button
+			button.btn.btn-link.app-header__burger-menu.app-header__burger-menu--close(type="button", aria-label="close Menu", aria-controls="side-menu", accesskey="c")
+				svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' viewBox='0 0 16 16')
+					path(d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z')
+			// header side menu close button end/.
+			.container
+				.row
+					.col-10.offset-1.d-flex.flex-column.align-items-center.justify-content-center
+						// header side menu navigation
+						nav.app-header__nav(aria-label="side menu main navigation")
+							ul.app-header__list(role="menu")
+								each nav_list_item, i in data.nav_list
+									li.app-header__list-item(class=`${(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "active" : ""}`, role="menuitem")
+										a(href=nav_list_item.href, aria-current=(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "page" : undefined)=nav_list_item.title
+						// header side menu navigation end/.
+						// header side menu social links
+						nav.mt-5.mb-3(aria-label="social navigation")
+							ul.list-inline.mb-0
+								li.list-inline-item
+									a.text-white(href="http://www.facebook.com", alt="contact us via facebook", target="_blank", aria-label="contact us via facebook")
+										i.fab.fa-facebook-f
+								li.list-inline-item
+									a.text-white(href="http://www.twitter.com", alt="contact us via twitter", target="_blank", aria-label="contact us via twitter")
+										i.fab.fa-twitter
+								li.list-inline-item
+									a.text-white(href="http://www.linkedin.com", alt="contact us via linkedin", target="_blank", aria-label="contact us via linkedin")
+										i.fab.fa-linkedin-in
+								li.list-inline-item
+									a.text-white(href="http://www.instagram.com", alt="contact us via instagram", target="_blank", aria-label="contact us via instagram")
+										i.fab.fa-instagram
+						// header side menu social links end/.
+					.col-6.offset-3
+						hr.border-white
+					.col-10.offset-1
+						a.btn.btn-link.btn-block.rtl.text-center.text-white.text-decoration-none(href="#") عربي
+		// header side menu end/.
+	// application header section end/.
