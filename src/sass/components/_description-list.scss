@@ -1,0 +1,52 @@
+.description-list {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 1rem;
+
+	&__content {
+		font-weight: $font-weight-light;
+		font-size: 1.5rem;
+
+		&,
+		a,
+		address {
+			color: $body-color;
+			text-decoration: none;
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				transition: $transition-base;
+			}
+		}
+
+		& + .description-list__title {
+			margin-top: 2rem;
+		}
+	}
+	&__title {
+		font-weight: $font-weight-bold;
+		color: $red;
+		text-transform: capitalize;
+		font-size: 1.75rem;
+		display: flex;
+		align-items: center;
+		&--has-icon {
+			& + .description-list__content {
+				padding-left: calc(32px + 14px);
+			}
+		}
+	}
+	&__icon {
+		width: 32px;
+		height: auto;
+		margin-right: 14px;
+		display: inline-block;
+		svg {
+			height: 100%;
+			margin: 0 auto;
+			object-fit: scale-down;
+			object-position: top center;
+		}
+	}
+}

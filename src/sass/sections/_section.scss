@@ -109,6 +109,9 @@
 		max-height: 100%;
 		z-index: 25;
 		margin: 0;
+		& ~ .section {
+			z-index: 30;
+		}
 
 		@each $breakpoint, $container-max-width in $container-max-widths {
 			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
@@ -160,7 +163,7 @@
 			left: 50%;
 			right: initial;
 			bottom: initial;
-			transform: translate(-50%);
+			transform: translate(-50%, -50%);
 			.section__float-image {
 				object-position: center center;
 			}
@@ -215,6 +218,138 @@
 			object-fit: cover;
 		}
 	}
+	&__media {
+		&-container {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+		}
+		&-image {
+			display: flex;
+			height: auto;
+			min-height: 100%;
+			max-height: 21.875rem; // 350px
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+
+			@include media-breakpoint-down(md) {
+				max-height: calc(100vw * 0.5);
+			}
+
+			@include media-breakpoint-up(md) {
+				&--float {
+					position: absolute;
+					&.section__media-image--position {
+						&-center {
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							align-items: center;
+							justify-content: center;
+						}
+						&-top {
+							top: 0;
+							left: 50%;
+							transform: translateX(-50%);
+							justify-content: center;
+						}
+						&-right {
+							right: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							align-items: center;
+						}
+						&-bottom {
+							bottom: 0;
+							left: 50%;
+							transform: translateX(-50%);
+							justify-content: center;
+						}
+						&-left {
+							left: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							align-items: center;
+						}
+						&-right-top {
+							right: 0;
+							top: 0;
+							justify-content: flex-end;
+						}
+						&-right-bottom {
+							right: 0;
+							bottom: 0;
+							align-items: flex-end;
+							justify-content: flex-end;
+						}
+						&-left-top {
+							left: 0;
+							top: 0;
+						}
+						&-left-bottom {
+							left: 0;
+							bottom: 0;
+							align-items: flex-end;
+						}
+					}
+				}
+			}
+
+			&--position {
+				&-center,
+				&-top,
+				&-right,
+				&-left,
+				&-right-top,
+				&-right-bottom,
+				&-left-top,
+				&-left-bottom {
+					@include media-breakpoint-down(md) {
+						object-position: center;
+					}
+				}
+				&-center {
+					object-position: center center;
+					align-items: center;
+					justify-content: center;
+				}
+				&-top {
+					object-position: center top;
+					justify-content: center;
+				}
+				&-right {
+					object-position: right center;
+					align-items: center;
+				}
+				&-bottom {
+					object-position: center bottom;
+					justify-content: center;
+				}
+				&-left {
+					object-position: left center;
+					align-items: center;
+				}
+				&-right-top {
+					object-position: right top;
+					justify-content: flex-end;
+				}
+				&-right-bottom {
+					object-position: right bottom;
+					align-items: flex-end;
+					justify-content: flex-end;
+				}
+				&-left-top {
+					object-position: left top;
+				}
+				&-left-bottom {
+					object-position: left bottom;
+					align-items: flex-end;
+				}
+			}
+		}
+	}
 
 	&__content-wrapper {
 		min-width: 1px;
@@ -231,10 +366,10 @@
 		padding: map-get($spacers, 5) map-get($spacers, 5);
 
 		@include media-breakpoint-down(md) {
-			padding: #{map-get($spacers, 5) / 2} #{map-get($spacers, 5) / 2};
+			padding: calc(#{map-get($spacers, 5)} / 2) calc(#{map-get($spacers, 5)} / 2);
 		}
 		@include media-breakpoint-down(sm) {
-			padding: #{map-get($spacers, 5) / 3} #{map-get($spacers, 5) / 3};
+			padding: calc(#{map-get($spacers, 5)} / 3) calc(#{map-get($spacers, 5)} / 3);
 		}
 	}
 

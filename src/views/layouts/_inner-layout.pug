@@ -1,7 +1,7 @@
 include ../mixins/_app-header.pug
 
 block variables
-	- var menu = {type:"inner", is_menu_open: false, nav_list: [{ title: "about", href: "about-us.html" }]};
+	- var menu = {type:"inner", is_menu_open: false, nav_list: [{ title: "who we are", href: "index.html#inner-about-us-section" }, { title: "our service", href: "index.html#services-section" }, { title: "join us", href: "index.html#join-us-section" }, { title: "contact us", href: "index.html#contact-us-section" }]};
 
 doctype html
 html(lang=`${locals.lang}` dir=`${(locals.lang === "en") ? "ltr" : "rtl"}`)

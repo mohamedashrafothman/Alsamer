@@ -1,0 +1,6 @@
+#contact-us-section {
+	padding: map-get($spacers, 7) 0;
+	@include media-breakpoint-down(sm) {
+		padding: map-get($spacers, 6) 0;
+	}
+}

@@ -17,6 +17,7 @@
 @import "components/client";
 @import "components/project";
 @import "components/team-member";
+@import "components/description-list";
 
 /*
 ** HELPERS
@@ -35,12 +36,17 @@
 @import "sections/section";
 @import "sections/app-main";
 @import "sections/hero";
-@import "sections/about-us-section";
+@import "sections/index-about-us-section";
 @import "sections/services-section";
 @import "sections/clients-section";
 @import "sections/projects-section";
 @import "sections/why-choose-us-section";
 @import "sections/our-team-section";
+@import "sections/join-us-section";
+@import "sections/contact-us-section";
+@import "sections/inner-about-us-section";
+@import "sections/our-goals-section";
+@import "sections/app-main-header";
 
 /*
 ** PAGES

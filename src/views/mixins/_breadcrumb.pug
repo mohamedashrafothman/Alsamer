@@ -1,0 +1,14 @@
+mixin breadcrumb(data=[])
+	// Breadcrumb
+	nav(aria-label="breadcrumb")
+		ol.breadcrumb
+			each page, index in data
+				if (index !== data.length-1)
+					li.breadcrumb-item
+						a.text-white.text-capitalize.text-decoration-none(href=`${page.href}`)= `${page.title}`
+				else
+					li.breadcrumb-item.active.text-capitalize
+						= `${String(page.title).split("").slice(0, 40).join('')}`
+						if (String(page.title).split("").length >= 40)
+							| ...
+	// Breadcrumb End/.

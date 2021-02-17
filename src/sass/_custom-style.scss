@@ -23,7 +23,8 @@ body {
 		overflow-x: hidden;
 	}
 
-	&.app-preloader--shown {
+	&.app-preloader--shown,
+	&.side-menu--is-open {
 		overflow: hidden !important;
 		overflow-y: hidden !important;
 		scrollbar-width: none !important; /* Firefox 64 */

@@ -46,3 +46,21 @@
 		background-color: transparent;
 	}
 }
+
+.fill {
+	fill: $body-color;
+}
+
+.stroke {
+	stroke: $body-color;
+}
+
+@each $color, $value in $colors {
+	.fill--color-#{$color} {
+		fill: $value !important;
+	}
+
+	.stroke--color-#{$color} {
+		stroke: $value !important;
+	}
+}

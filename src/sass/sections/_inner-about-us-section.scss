@@ -1,0 +1,7 @@
+#inner-about-us-section {
+	padding: map-get($spacers, 4) 0 map-get($spacers, 6) 0;
+
+	@include media-breakpoint-down(md) {
+		padding: map-get($spacers, 3) 0 map-get($spacers, 5) 0;
+	}
+}

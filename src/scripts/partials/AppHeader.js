@@ -11,6 +11,7 @@ class AppHeader {
 			this._animation_state(options);
 			this._cache_dom();
 			this._set_open_state();
+			this._resizeHeroSection();
 			this._scrolling_app_header();
 			this._bind_events();
 			// assigning instance
@@ -43,7 +44,7 @@ class AppHeader {
 		this.DOM.$body = $("body");
 		this.DOM.$app_header = $(".app-header");
 		this.DOM.$app_hero = $("#hero-section");
-		this.DOM.$inner_header = $(".inner-header");
+		this.DOM.$app_main_header = $(".app-main-header");
 		this.header_last_scroll_top = this.DOM.$app_header.offset().top;
 		this.header_height = this.DOM.$app_header.outerHeight(true);
 		this.header_top = this.header_height || 0;
@@ -76,7 +77,6 @@ class AppHeader {
 		_this.DOM.$open_menu_button.on("click", (e) => _this._open_app_header_menu(e));
 		_this.DOM.$close_menu_button.on("click", (e) => _this._close_app_header_menu(e));
 		_this.DOM.$app_header_underlay.on("click", (e) => _this._close_app_header_menu(e));
-		$(() => this._resizeHeroSection());
 	}
 
 	_toggle_app_header_menu(e, cb) {
@@ -169,6 +169,10 @@ class AppHeader {
 	_resizeHeroSection() {
 		const _this = this; // refer to AppHeader class
 		_this.DOM.$app_hero.css({ paddingTop: _this.header_height });
+		_this.DOM.$app_main_header.each((index, ele) => {
+			console.log("app main header", $(ele));
+			$(ele).css({ paddingTop: `calc(${_this.DOM.$app_main_header.css("padding-top")} + ${_this.header_height}px)` });
+		});
 	}
 }
 

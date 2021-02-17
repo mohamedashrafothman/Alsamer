@@ -1,0 +1,45 @@
+extends ./layouts/_inner-layout.pug
+include ./mixins/_app-main-header.pug
+
+block content
+	// Application main section
+	main.app-main.app-main--inner#app-main(role="main")
+		+app-main-header({page_url:"about-us.html", page_title: "about us", background_img: {src: "./images/backgrounds/hero-section-bg.jpg"}, breadcrumb: [{title: "home", href: "index.html"}, {title: "about us", href: "about-us.html"}]})
+		include ./sections/inner-about-us-section.pug
+		include ./sections/our-goals-sections.pug
+		article.inner-article.section.py-5(role="article")
+			.section__float-image-container.section__float-image-container--center-center
+				.section__float-image(role="presentation")
+					svg(xmlns='http://www.w3.org/2000/svg' width='536.216' height='379.489' viewBox='0 0 536.216 379.489')
+						g(transform='translate(-320.992 -763.852)' opacity='0.1')
+							g(transform='translate(320.992 837.647)')
+								path(d='M387.977,923.112l-22.438-22.438,22.438-22.438-22.189-22.189-44.8,44.8,44.627,44.627Z' transform='translate(-320.992 -784.772)' class="fill fill--color-red")
+								path(d='M412.6,810.75l-48.766,48.766,22.26,22.26-22.438,22.438,22.438,22.438-22.438,22.438,22.438,22.438-22.43,22.43,48.935,48.936L528.669,926.822Z' transform='translate(-296.525 -810.75)' class="fill fill--color-red")
+							path(d='M643.541,952.435,454.767,764.392,424.32,795.024,582.5,952.594,422.8,1112.4l30.447,30.632L642.018,954.137l-.084-.085Z' transform='translate(58.386 0.31)' class="fill fill--color-blue" fill-rule='evenodd')
+							path(d='M741.671,951.895,552.9,763.852,522.45,794.483,681.106,951.81,522.45,1111.859l28.925,29.781L711.837,981.075Z' transform='translate(115.537)' class="fill fill--color-red" fill-rule='evenodd')
+			section.section.section--zigzag.section--bg-transparent
+				.container-fluid.px-0
+					.row.align-items-lg-center.align-items-start.no-gutters
+						.col-12.col-md-7.mb-gutter.mb-md-0
+							.section__content-wrapper.pl-0.pr-5
+								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2 our mission
+								.section__content.pl-5
+									p Our mission is to achieve a good reputation by providing the best solutions to solve problems in reliable and advanced ways, while meeting the deadlines according to the time plan of the project through our fleet and transport equipment.
+						.col-10.offset-2.col-md-5.offset-md-0
+							figure.section__media-container.shadow
+								img.section__media-image(src="./images/backgrounds/our-mission-section-bg.jpg", alt="", role="presentation")
+			section.section.section--zigzag.section--bg-transparent
+				.container-fluid.px-0
+					.row.align-items-lg-center.align-items-start.no-gutters
+						.col-12.col-md-7.order-last.mb-gutter.mb-md-0
+							.section__content-wrapper.pl-0.pr-5
+								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2 Our Vision
+								.section__content.pl-5
+									p Our vision is to become the first and leading logistics company at the re-gional and international levels, believing that the field of development and reconstruction is booming at present and in the future.
+						.col-10.col-md-5.order-first
+							figure.section__media-container.shadow
+								img.section__media-image(src="./images/backgrounds/our-vision-section-bg.jpg", alt="", role="presentation")
+		// application inner pages article end/.
+		include ./sections/join-us-section.pug
+		include ./sections/contact-us-section.pug
+	// Application main section end/.

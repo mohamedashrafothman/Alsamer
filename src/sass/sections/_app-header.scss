@@ -1,10 +1,10 @@
 .app-header {
-	width: 100%;
+	z-index: $zindex-header;
+	color: $white;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: $zindex-header;
-	color: $white;
+	width: 100%;
 
 	&__content {
 		position: relative;
@@ -22,6 +22,7 @@
 
 	&--inner,
 	&--scrolling {
+		color: $primary;
 		transition: $transition-base;
 		padding-top: map-get($spacers, 2);
 		padding-bottom: map-get($spacers, 2);
@@ -34,17 +35,6 @@
 				height: 4rem;
 			}
 		}
-
-		@include media-breakpoint-down(sm) {
-			padding-top: map-get($spacers, 1);
-			padding-bottom: map-get($spacers, 1);
-		}
-	}
-
-	&--scrolling {
-		position: fixed;
-		width: 100%;
-		color: $primary;
 
 		.app-header__social {
 			@include media-breakpoint-up(lg) {
@@ -66,6 +56,16 @@
 				}
 			}
 		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: map-get($spacers, 1);
+			padding-bottom: map-get($spacers, 1);
+		}
+	}
+
+	&--scrolling {
+		position: fixed;
+		width: 100%;
 
 		&-up {
 			animation: slide-up 0.7s;
