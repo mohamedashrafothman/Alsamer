@@ -4,7 +4,16 @@ section.section.section--bg-white#hero-section
 		.row
 			.col-12
 				section.section.section--bg-primary#hero-section__content-container
-					.section__bg--image-container.section__fade.section__fade--primary-08
+					.section__float-image-container.section__float-image-container--center-center
+						.section__float-image(role="presentation", data-aos="fade-right", data-aos-delay="50", data-aos-mirror="false")
+							svg(xmlns='http://www.w3.org/2000/svg' width='536.216' height='379.489' viewBox='0 0 536.216 379.489')
+								g(transform='translate(-320.992 -763.852)' opacity='0.1')
+									g(transform='translate(320.992 837.647)')
+										path(d='M387.977,923.112l-22.438-22.438,22.438-22.438-22.189-22.189-44.8,44.8,44.627,44.627Z' transform='translate(-320.992 -784.772)' class="fill fill--color-white")
+										path(d='M412.6,810.75l-48.766,48.766,22.26,22.26-22.438,22.438,22.438,22.438-22.438,22.438,22.438,22.438-22.43,22.43,48.935,48.936L528.669,926.822Z' transform='translate(-296.525 -810.75)' class="fill fill--color-white")
+									path(d='M643.541,952.435,454.767,764.392,424.32,795.024,582.5,952.594,422.8,1112.4l30.447,30.632L642.018,954.137l-.084-.085Z' transform='translate(58.386 0.31)' class="fill fill--color-white" fill-rule='evenodd')
+									path(d='M741.671,951.895,552.9,763.852,522.45,794.483,681.106,951.81,522.45,1111.859l28.925,29.781L711.837,981.075Z' transform='translate(115.537)' class="fill fill--color-white" fill-rule='evenodd')
+					.section__bg--image-container.section__fade.section__fade--primary-08(data-aos="fade", data-aos-delay="100", data-aos-mirror="false")
 						img.section__bg--image(src="./images/backgrounds/hero-section-bg.jpg", alt="", role="presentation")
 					.container
 						.row
@@ -12,12 +21,12 @@ section.section.section--bg-white#hero-section
 								.section__content-wrapper.px-0.w-100
 									.row
 										.col-12.col-xl-11
-											h1.display-4.text-white.text-uppercase.font-weight-bolder Alsamer for trade & transportation
+											h1.display-4.text-white.text-uppercase.font-weight-bolder(data-aos="fade-right", data-aos-delay="150", data-aos-mirror="false") Alsamer for trade & transportation
 											.section__content
-												p.h3.text-white.font-weight-normal A pioneer in the field of building materials
-												p.h5.text-white.font-weight-light Learn about our services and join us now
+												p.h3.text-white.font-weight-normal(data-aos="fade-right", data-aos-delay="200", data-aos-mirror="false") A pioneer in the field of building materials
+												p.h5.text-white.font-weight-light(data-aos="fade-right", data-aos-delay="250", data-aos-mirror="false") Learn about our services and join us now
 										.col-6.col-md-4.mt-5
-											a.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(href="#")
+											a.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(href="about.html", data-aos="fade-right", data-aos-delay="300", data-aos-mirror="false")
 												| who we are
 												span.btn-icon
 													svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' viewBox='0 0 16 16')
@@ -27,6 +36,6 @@ section.section.section--bg-white#hero-section
 								#hero-section__image-container
 									.row
 										.col-12
-											.section__image-container
+											.section__image-container(data-aos="fade-left", data-aos-delay="350", data-aos-mirror="false")
 												img.section__image(src="./images/backgrounds/hero-section-image.png", alt="", role="presentation")
 // Hero section end/.

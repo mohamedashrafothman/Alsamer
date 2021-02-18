@@ -4,7 +4,7 @@ mixin app-main-header(data={page_url:"#", page_title: page_title || "", backgrou
 	// application inner pages header
 	header.app-main-header.section(role="header", aria-label="page header")
 		if (data.background_img && data.background_img.src)
-			.section__bg--image-container.section__fade.section__fade--primary-08
+			.section__bg--image-container.section__fade.section__fade--primary-08(data-aos="fade", data-aos-delay="0", data-aos-mirror="false")
 				img.section__bg--image(src=data.background_img.src, alt=`${page_title} banner`, role="presentation", data-paroller-factor="-0.05", data-paroller-type="foreground", data-paroller-direction="vertical")
 		.app-main-header__content-wrapper
 			section
@@ -14,8 +14,8 @@ mixin app-main-header(data={page_url:"#", page_title: page_title || "", backgrou
 							.row
 								if (data.page_title)
 									.col.col-12
-										h1.app-main-header__title=data.page_title
+										h1.app-main-header__title(data-aos="fade", data-aos-delay="100", data-aos-mirror="false")=data.page_title
 								if (data.breadcrumb && data.breadcrumb.length)
 									.col.col-12
-											+breadcrumb(data.breadcrumb)
+											+breadcrumb(data.breadcrumb, 200)
 	// application inner pages header end/.

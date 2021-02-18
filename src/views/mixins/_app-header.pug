@@ -4,12 +4,12 @@ mixin app-header(data={type: "index", is_menu_open: false, nav_list: []})
 	// index & inner pages classes [".app-header--index", ".app-header--inner"]
 	header.app-header(class=`app-header--${data.type}`)
 		// application header content
-		.app-header__content
+		.app-header__content(data-aos="fade", data-aos-delay="0", data-aos-mirror="false")
 			.container
 				.row.align-items-center
 					.col.col-5.col-sm-4.col-md-3
 						// header logo
-						.logo
+						.logo(data-aos="fade-up", data-aos-delay="0", data-aos-mirror="false")
 							a.logo-container(href="index.html", alt=locals.siteName["en"], aria-label=locals.siteName["en"])
 								img(src="./images/logo/logo-colored.svg", alt="AlSamer Home")
 						// header logo end/.
@@ -18,16 +18,16 @@ mixin app-header(data={type: "index", is_menu_open: false, nav_list: []})
 							.col-8.col-md-9.col-xl-3
 								// header side menu social links
 								ul.app-header__social.list-inline.mb-0.d-flex.align-items-center.justify-content-end.justify-content-lg-start
-									li.list-inline-item
+									li.list-inline-item(data-aos="fade-up", data-aos-delay="100", data-aos-mirror="false")
 										a(href="http://www.facebook.com", alt="contact us via facebook", target="_blank", aria-label="contact us via facebook")
 											i.fab.fa-facebook-f
-									li.list-inline-item
+									li.list-inline-item(data-aos="fade-up", data-aos-delay="150", data-aos-mirror="false")
 										a(href="http://www.twitter.com", alt="contact us via twitter", target="_blank", aria-label="contact us via twitter")
 											i.fab.fa-twitter
-									li.list-inline-item
+									li.list-inline-item(data-aos="fade-up", data-aos-delay="200", data-aos-mirror="false")
 										a(href="http://www.linkedin.com", alt="contact us via linkedin", target="_blank", aria-label="contact us via linkedin")
 											i.fab.fa-linkedin-in
-									li.list-inline-item
+									li.list-inline-item(data-aos="fade-up", data-aos-delay="250", data-aos-mirror="false")
 										a(href="http://www.instagram.com", alt="contact us via instagram", target="_blank", aria-label="contact us via instagram")
 											i.fab.fa-instagram
 								// header side menu social links end/.
@@ -38,14 +38,14 @@ mixin app-header(data={type: "index", is_menu_open: false, nav_list: []})
 										li.app-header__list-item
 											a.sr-only.sr-only-focusable(href="#app-main", role="menuitem") skip to content
 										each nav_list_item, i in data.nav_list
-											li.app-header__list-item(class=`${(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "active" : ""}`, role="menuitem")
+											li.app-header__list-item(class=`${(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "active" : ""}`, role="menuitem", data-aos="fade-up", data-aos-delay=`${((i+1)*50) + 250}`, data-aos-mirror="false")
 												a(href=nav_list_item.href, aria-current=(String(nav_list_item.title).toLowerCase() == String(page_title).toLowerCase()) ? "page" : undefined)=nav_list_item.title
-										li.app-header__list-item
+										li.app-header__list-item(data-aos="fade-up", data-aos-delay="750", data-aos-mirror="false")
 											a.rtl(href="#", role="menuitem") عربي
 								// header navigation list end/.
 							.col-3.offset-1.offset-md-0.d-flex.d-lg-none.justify-content-center
 								// header side menu open button
-								button.btn.btn-link.app-header__burger-menu.app-header__burger-menu--open(type="button", aria-label="Menu", aria-controls="side-menu", accesskey="m")
+								button.btn.btn-link.app-header__burger-menu.app-header__burger-menu--open(type="button", aria-label="Menu", aria-controls="side-menu", accesskey="m", data-aos="fade-up", data-aos-delay="750", data-aos-mirror="false")
 									svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' viewBox='0 0 16 16')
 										path(fill-rule='evenodd' d='M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
 

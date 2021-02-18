@@ -44,7 +44,7 @@
 			&-prev {
 				.mdi {
 					color: $white;
-					@include media-breakpoint-down(sm) {
+					@include media-breakpoint-down(md) {
 						color: $red;
 					}
 				}

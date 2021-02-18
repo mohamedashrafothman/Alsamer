@@ -1,7 +1,7 @@
 // Join us section
 section.section.section--bg-primary#join-us-section
-	.section__bg--image-container.section__fade.section__fade--primary-08
-		img.section__bg--image(src="./images/backgrounds/join-us-section-image.jpg", alt="", role="presentation")
+	.section__bg--image-container.section__fade.section__fade--primary-08(data-aos="fade", data-aos-delay="0", data-aos-mirror="false")
+		img.section__bg--image(src="./images/backgrounds/join-us-section-image.jpg", alt="", role="presentation", data-paroller-factor="-0.05", data-paroller-type="foreground", data-paroller-direction="vertical")
 	.container
 		.row
 			.col-12
@@ -10,12 +10,12 @@ section.section.section--bg-primary#join-us-section
 						.section__content-wrapper.text-white.px-0.pt-5.pb-4.pb-sm-5
 							.row
 								.col-12
-									h2.h1.text-white.font-weight-bolder.text-uppercase join us
+									h2.h1.text-white.font-weight-bolder.text-uppercase(data-aos="fade-up", data-aos-delay="100", data-aos-mirror="false") join us
 								.col-12.mt-2
-									.section__content
+									.section__content(data-aos="fade-up", data-aos-delay="200", data-aos-mirror="false")
 										p.lead.font-weight-normal.mb-0 We always look for the best talents
 					.col-6.offset-1.col-sm-4.offset-sm-0.col-md-4.col-lg-2.offset-lg-3.d-flex.justify-content-center.pb-5.pb-sm-0
-						button.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(type="button", data-toggle="modal", data-target="#joinUsModal")
+						button.btn.btn-danger.btn-block.btn-with-icon.text-uppercase(type="button", data-toggle="modal", data-target="#joinUsModal", data-aos="fade", data-aos-delay="300", data-aos-mirror="false")
 							| join us
 							span.btn-icon
 								svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' viewBox='0 0 16 16')

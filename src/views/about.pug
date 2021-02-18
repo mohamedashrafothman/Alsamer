@@ -9,7 +9,7 @@ block content
 		include ./sections/our-goals-sections.pug
 		article.inner-article.section.py-5(role="article")
 			.section__float-image-container.section__float-image-container--center-center
-				.section__float-image(role="presentation")
+				.section__float-image(role="presentation", data-aos="fade", data-aos-delay="0", data-aos-mirror="false")
 					svg(xmlns='http://www.w3.org/2000/svg' width='536.216' height='379.489' viewBox='0 0 536.216 379.489')
 						g(transform='translate(-320.992 -763.852)' opacity='0.1')
 							g(transform='translate(320.992 837.647)')
@@ -22,22 +22,22 @@ block content
 					.row.align-items-lg-center.align-items-start.no-gutters
 						.col-12.col-md-7.mb-gutter.mb-md-0
 							.section__content-wrapper.pl-0.pr-5
-								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2 our mission
-								.section__content.pl-5
+								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2(data-aos="fade-right", data-aos-delay="100", data-aos-mirror="false") our mission
+								.section__content.pl-5(data-aos="fade-right", data-aos-delay="200", data-aos-mirror="false")
 									p Our mission is to achieve a good reputation by providing the best solutions to solve problems in reliable and advanced ways, while meeting the deadlines according to the time plan of the project through our fleet and transport equipment.
 						.col-10.offset-2.col-md-5.offset-md-0
-							figure.section__media-container.shadow
+							figure.section__media-container.shadow(data-aos="fade-left", data-aos-delay="300", data-aos-mirror="false")
 								img.section__media-image(src="./images/backgrounds/our-mission-section-bg.jpg", alt="", role="presentation")
 			section.section.section--zigzag.section--bg-transparent
 				.container-fluid.px-0
 					.row.align-items-lg-center.align-items-start.no-gutters
 						.col-12.col-md-7.order-last.mb-gutter.mb-md-0
 							.section__content-wrapper.pl-0.pr-5
-								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2 Our Vision
-								.section__content.pl-5
+								h2.section__title.bg-red.text-white.text-uppercase.d-inline-block.pl-5.pr-4.py-2(data-aos="fade-right", data-aos-delay="100", data-aos-mirror="false") Our Vision
+								.section__content.pl-5(data-aos="fade-right", data-aos-delay="200", data-aos-mirror="false")
 									p Our vision is to become the first and leading logistics company at the re-gional and international levels, believing that the field of development and reconstruction is booming at present and in the future.
 						.col-10.col-md-5.order-first
-							figure.section__media-container.shadow
+							figure.section__media-container.shadow(data-aos="fade-left", data-aos-delay="400", data-aos-mirror="false")
 								img.section__media-image(src="./images/backgrounds/our-vision-section-bg.jpg", alt="", role="presentation")
 		// application inner pages article end/.
 		include ./sections/join-us-section.pug

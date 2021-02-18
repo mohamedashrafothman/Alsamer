@@ -11,17 +11,17 @@ const swiperInitFunction = () => {
 			speed: 1000,
 			updateOnWindowResize: true,
 			slidesPerView: 3,
-			slidesPerColumn: 3,
+			slidesPerColumn: 2,
 			spaceBetween: 16,
 			breakpoints: {
 				// when window width is >= 576px
-				576: { slidesPerView: 2 },
+				576: { slidesPerView: 2, slidesPerColumn: 2 },
 				// when window width is >= 768px
 				768: { slidesPerView: 3, slidesPerColumn: 3 },
 				// when window width is >= 992px
-				992: { slidesPerView: 4 },
+				992: { slidesPerView: 4, slidesPerColumn: 3 },
 				// when window width is >= 1200px
-				1200: { slidesPerView: 5 },
+				1200: { slidesPerView: 5, slidesPerColumn: 3 },
 			},
 			navigation: {
 				disabledClass: "disabled",
@@ -32,6 +32,34 @@ const swiperInitFunction = () => {
 		new Swiper(`#${$clients_section_slider.attr("id")}`, clients_section_slider_options);
 	}
 
+	const $our_supplier_section_slider = $(".swiper-container#our-supplier-section-slider").eq(0);
+	if ($our_supplier_section_slider.length) {
+		const our_supplier_section_slider_options = {
+			direction: "horizontal",
+			speed: 1000,
+			updateOnWindowResize: true,
+			slidesPerView: 1,
+			slidesPerColumn: 4,
+			spaceBetween: 16,
+			breakpoints: {
+				// when window width is >= 576px
+				576: { slidesPerView: 1, slidesPerColumn: 4 },
+				// when window width is >= 768px
+				768: { slidesPerView: 1, slidesPerColumn: 5 },
+				// when window width is >= 992px
+				992: { slidesPerView: 2, slidesPerColumn: 6 },
+				// when window width is >= 1200px
+				1200: { slidesPerView: 2, slidesPerColumn: 6 },
+			},
+			navigation: {
+				disabledClass: "disabled",
+				prevEl: "#our-supplier-section .slider-button-prev",
+				nextEl: "#our-supplier-section .slider-button-next",
+			},
+		};
+		new Swiper(`#${$our_supplier_section_slider.attr("id")}`, our_supplier_section_slider_options);
+	}
+
 	const $projects_section_slider = $(".swiper-container#projects-section-slider").eq(0);
 	if ($projects_section_slider.length) {
 		const projects_section_options = {
@@ -39,6 +67,7 @@ const swiperInitFunction = () => {
 			initialSlide: 1,
 			grabCursor: true,
 			centeredSlides: true,
+			parallax: true,
 			direction: "horizontal",
 			speed: 1000,
 			effect: "slide",
@@ -54,22 +83,22 @@ const swiperInitFunction = () => {
 				enabled: true,
 				onlyInViewport: false,
 			},
-			spaceBetween: 25,
+			spaceBetween: 20,
 			slidesPerView: 2,
 			breakpoints: {
 				// when window width is >= 576px
 				576: {
-					spaceBetween: 50,
+					spaceBetween: 45,
 					slidesPerView: 2,
 				},
 				// when window width is >= 768px
 				768: {
-					spaceBetween: 75,
+					spaceBetween: 65,
 					slidesPerView: 3,
 				},
 				// when window width is >= 1200px
 				1200: {
-					spaceBetween: 100,
+					spaceBetween: 75,
 					slidesPerView: 3,
 				},
 			},
@@ -86,7 +115,6 @@ const swiperInitFunction = () => {
 			direction: "horizontal",
 			speed: 1000,
 			autoplay: { delay: 5000, disableOnInteraction: true },
-			parallax: true,
 			slidesPerView: 1,
 			effect: "fade",
 			fadeEffect: {
@@ -104,6 +132,11 @@ const swiperInitFunction = () => {
 		};
 		const why_choose_us_content_options = {
 			speed: 1000,
+			effect: "fade",
+			fadeEffect: {
+				crossFade: true,
+			},
+			parallax: true,
 			slidesPerView: 1,
 			freeMode: false,
 			watchSlidesVisibility: true,

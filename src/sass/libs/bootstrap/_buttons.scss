@@ -26,7 +26,8 @@
 		text-decoration: none;
 		&:not(.page-link) {
 			.btn-icon {
-				margin-right: calc(-1 * #{$btn-padding-x}) !important;
+				@include transition($btn-transition !important);
+				margin-right: calc(-1 * #{$btn-padding-x});
 			}
 		}
 	}

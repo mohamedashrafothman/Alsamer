@@ -7,6 +7,7 @@
 @import "libs/swiper/swiper";
 @import "libs/animate-css/animate";
 @import "libs/mdi/materialdesignicons.scss";
+@import "libs/aos/aos.scss";
 
 /*
 ** COMPONENTS
@@ -18,6 +19,7 @@
 @import "components/project";
 @import "components/team-member";
 @import "components/description-list";
+@import "components/supplier";
 
 /*
 ** HELPERS
@@ -47,6 +49,7 @@
 @import "sections/inner-about-us-section";
 @import "sections/our-goals-section";
 @import "sections/app-main-header";
+@import "sections/our-supplier-section";
 
 /*
 ** PAGES

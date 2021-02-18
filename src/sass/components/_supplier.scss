@@ -1,0 +1,17 @@
+.supplier {
+	&__title {
+		font-size: 1.4375rem;
+		text-transform: capitalize;
+		position: relative;
+		padding-left: calc(3px + 1rem);
+		&::before {
+			content: ".";
+			display: inline-block;
+			color: $red;
+			font-size: 3.75rem;
+			line-height: 0;
+			position: absolute;
+			left: 0;
+		}
+	}
+}

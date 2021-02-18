@@ -1,6 +1,6 @@
-mixin breadcrumb(data=[])
+mixin breadcrumb(data=[], delay=0)
 	// Breadcrumb
-	nav(aria-label="breadcrumb")
+	nav(aria-label="breadcrumb", data-aos="fade", data-aos-delay=delay, data-aos-mirror="false")
 		ol.breadcrumb
 			each page, index in data
 				if (index !== data.length-1)

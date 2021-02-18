@@ -463,7 +463,7 @@ $btn-font-weight: $font-weight-normal !default;
 $btn-box-shadow: inset 0 0px 0 rgba($white, 0.15), 0 0px 0px rgba($black, 0.075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
-$btn-disabled-opacity: 0.65 !default;
+$btn-disabled-opacity: 0.5 !default;
 $btn-active-box-shadow: inset 0 0px 0px rgba($black, 0.125) !default;
 
 $btn-link-disabled-color: $gray-600 !default;
@@ -475,7 +475,7 @@ $btn-border-radius: 0 !default;
 $btn-border-radius-lg: 0 !default;
 $btn-border-radius-sm: 0 !default;
 
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$btn-transition: $transition-base !default;
 
 // Forms
 
