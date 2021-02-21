@@ -35,7 +35,7 @@
 			display: block;
 			left: 100%;
 			top: calc(50%);
-			transform: translateY(-50%);
+			transform: translateY(-50%) #{"/*rtl:append:rotate(180deg)*/"};
 			width: 18px;
 			height: calc(100% + (#{$btn-border-width} * 4));
 			clip-path: polygon(0 0, 0% 100%, 100% 50%);
@@ -46,6 +46,9 @@
 	.btn-icon {
 		.fill {
 			fill: currentColor;
+		}
+		svg {
+			transform: none #{"/*rtl:rotate(180deg)*/"};
 		}
 	}
 

@@ -1,12 +1,31 @@
 #index-about-us-section {
 	padding-top: map-get($spacers, 10);
 	padding-bottom: map-get($spacers, 5);
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		padding-top: calc(#{map-get($spacers, 5)} + 25rem);
 	}
 
 	.section__float-image-container {
-		@include media-breakpoint-down(sm) {
+		width: 100%;
+		position: relative;
+		@each $breakpoint, $container-max-width in $container-max-widths {
+			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+				position: absolute;
+				@if $breakpoint == md {
+					width: calc(75% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else if $breakpoint == lg or $breakpoint == xl {
+					width: calc(50% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else {
+					width: calc(55% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				}
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			top: 0;
+		}
+
+		@include media-breakpoint-down(lg) {
 			top: map-get($spacers, 5);
 			transform: initial !important;
 		}

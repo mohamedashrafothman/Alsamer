@@ -70,5 +70,14 @@
 				max-height: calc(100vw) !important;
 			}
 		}
+		.section__image {
+			transform: none #{"/*rtl:rotateY(180deg)*/"};
+		}
+	}
+
+	.section__float-image {
+		svg {
+			transform: none #{"/*rtl:rotateY(180deg)*/"};
+		}
 	}
 }
