@@ -17,7 +17,10 @@ html {
 }
 
 body {
-	font-family: $font-family-base #{"/*rtl:prepend:" $font-family-almarai ",*/"};
+	font-family: $font-family-almarai;
+	/*!rtl:begin:remove*/
+	font-family: $font-family-base !important;
+	/*!rtl:end:remove*/
 	&,
 	#app {
 		overflow-x: hidden;
@@ -60,5 +63,8 @@ textarea {
 
 .slider-button-next,
 .slider-button-prev {
-	transform: none #{"/*rtl:rotateY(180deg)*/"};
+	transform: rotateY(180deg);
+	/*!rtl:begin:remove*/
+	transform: none !important;
+	/*!rtl:end:remove*/
 }

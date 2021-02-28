@@ -160,11 +160,11 @@ const swiperInitFunction = () => {
 			init: true,
 			initialSlide: 1,
 			grabCursor: true,
-			centeredSlides: true,
+			centeredSlides: false,
 			direction: "horizontal",
 			speed: 1000,
 			effect: "slide",
-			loop: true,
+			loop: false,
 			updateOnWindowResize: true,
 			slideToClickedSlide: true,
 			navigation: {

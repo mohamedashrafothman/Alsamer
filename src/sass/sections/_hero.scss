@@ -71,13 +71,19 @@
 			}
 		}
 		.section__image {
-			transform: none #{"/*rtl:rotateY(180deg)*/"};
+			transform: rotateY(180deg);
+			/*!rtl:begin:remove*/
+			transform: none !important;
+			/*!rtl:end:remove*/
 		}
 	}
 
 	.section__float-image {
 		svg {
-			transform: none #{"/*rtl:rotateY(180deg)*/"};
+			transform: rotateY(180deg);
+			/*!rtl:begin:remove*/
+			transform: none !important;
+			/*!rtl:end:remove*/
 		}
 	}
 }

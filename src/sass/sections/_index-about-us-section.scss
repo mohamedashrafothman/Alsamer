@@ -1,8 +1,13 @@
 #index-about-us-section {
-	padding-top: map-get($spacers, 10);
-	padding-bottom: map-get($spacers, 5);
-	@include media-breakpoint-down(md) {
+	padding: map-get($spacers, 5) 0;
+	@include media-breakpoint-only(md) {
 		padding-top: calc(#{map-get($spacers, 5)} + 25rem);
+	}
+	@include media-breakpoint-only(sm) {
+		padding-top: calc(#{map-get($spacers, 5)} + 25rem);
+	}
+	@include media-breakpoint-up(lg) {
+		padding-top: map-get($spacers, 10);
 	}
 
 	.section__float-image-container {
@@ -11,12 +16,14 @@
 		@each $breakpoint, $container-max-width in $container-max-widths {
 			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
 				position: absolute;
-				@if $breakpoint == md {
-					width: calc(75% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
-				} @else if $breakpoint == lg or $breakpoint == xl {
-					width: calc(50% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				@if $breakpoint == xl {
+					width: calc(#{percentage(4 / $grid-columns)} + calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else if $breakpoint == lg {
+					width: calc(#{percentage(4 / $grid-columns)} + calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+				} @else if $breakpoint == md {
+					width: calc(#{percentage(9 / $grid-columns)} + calc((100% - #{map-get($container-max-widths, $breakpoint)})));
 				} @else {
-					width: calc(55% - calc((100% - #{map-get($container-max-widths, $breakpoint)})));
+					width: calc(#{percentage(8 / $grid-columns)} + calc((100% - #{map-get($container-max-widths, $breakpoint)})));
 				}
 			}
 		}
@@ -28,6 +35,11 @@
 		@include media-breakpoint-down(lg) {
 			top: map-get($spacers, 5);
 			transform: initial !important;
+		}
+	}
+	.section__content-wrapper {
+		@include media-breakpoint-down(lg) {
+			padding-top: calc(#{map-get($spacers, 5)} + 1rem);
 		}
 	}
 }
